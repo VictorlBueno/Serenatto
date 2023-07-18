@@ -6,21 +6,7 @@
 
     $produtoRepository = new ProdutoRepository($pdo);
     $dadosCafe = $produtoRepository->opcoesCafe();
-
-    $sql2 = "SELECT * FROM produtos WHERE tipo = 'Almoço' ORDER BY preco";
-    $stmt = $pdo->query($sql2);
-    $produtosAlmoco = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-    $dadosAlmoco = array_map(function($almoco){
-        return new Produto(
-            $almoco['id'],
-            $almoco['tipo'],
-            $almoco['nome'],
-            $almoco['descricao'],
-            $almoco['imagem'],
-            $almoco['preco']
-        );
-    }, $produtosAlmoco);
+    $dadosAlmoco = $produtoRepository->opcoesAlmoco();
 
 ?>
 

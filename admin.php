@@ -1,3 +1,14 @@
+<?php
+
+    require_once "src/conexao-bd.php";
+    require_once "src/model/Produto.php";
+    require_once "src/repository/ProdutoRepository.php";
+
+    $produtoRepositorio = new ProdutoRepository($pdo);
+
+
+?>
+
 <!doctype html>
 <html lang="pt-br">
 <head>
@@ -36,7 +47,7 @@
         </tr>
       </thead>
       <tbody>
-      <tr>
+        <tr>
         <td>Bife</td>
         <td>Almoço</td>
         <td>Delicioso prato</td>
@@ -47,32 +58,7 @@
             <input type="button" class="botao-excluir" value="Excluir">
           </form>
         </td>
-        
-      </tr>
-      <tr>
-        <td>Frango</td>
-        <td>Almoço</td>
-        <td>Delicioso prato</td>
-        <td>R$ 25.00</td>
-        <td><a class="botao-editar" href="editar-produto.html">Editar</a></td>
-        <td>
-          <form>
-            <input type="button" class="botao-excluir" value="Excluir">
-          </form>
-        </td>
-      </tr>
-      <tr>
-        <td>Café Gelado</td>
-        <td>Café</td>
-        <td>Delicioso prato</td>
-        <td>R$ 25.00</td>
-        <td><a class="botao-editar" href="editar-produto.html">Editar</a></td>
-        <td>
-          <form>
-            <input type="button" class="botao-excluir" value="Excluir">
-          </form>
-        </td>
-      </tr>
+        </tr>
       </tbody>
     </table>
   <a class="botao-cadastrar" href="cadastrar-produto.html">Cadastrar produto</a>
